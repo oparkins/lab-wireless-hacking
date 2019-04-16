@@ -92,3 +92,5 @@ To crack WPA2, follow the material from [Here]](https://www.aircrack-ng.org/doku
 [WPA Crack](https://www.aircrack-ng.org/doku.php?id=cracking_wpa)
 
 [Newbie Article](https://www.aircrack-ng.org/doku.php?id=newbie_guide)
+
+[WEP Details](http://www.opus1.com/www/whitepapers/whatswrongwithwep.pdf)

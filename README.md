@@ -52,7 +52,7 @@ Then, WPA2 was released. WPA2 replaces the ciphers used in WEP/WPA. It also inct
 ## Setup ## 
 ### Router ###
 
-This lab is using a router that has been uploaded with a custom firmware called (OpenWRT)[https://openwrt.org/]. This is a Linux operating system that can give your router more features, but also frees your dependence on companies providing support. 
+This lab is using a router that has been uploaded with a custom firmware called [OpenWRT](https://openwrt.org/). This is a Linux operating system that can give your router more features, but also frees your dependence on companies providing support. 
 
 For this lab, the configuration is located elsewhere in the repository. You can upload this backup to another router to reproduce this lab. 
 

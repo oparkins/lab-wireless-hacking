@@ -79,6 +79,53 @@ To crack WEP, follow the material from [Here](https://www.aircrack-ng.org/doku.p
 
 Your wireless card may not work for this. If not, we will perform this in class, or pair up with people.
 
+First see which network cards you have available:
+```
+# airmon-ng
+```
+
+Then, use
+
+```
+# airmon-ng start <interface>
+```
+
+If it reports an error about interfering processes, run the recommend command. In addition, if `NetworkManager` is running, that needs to be stopped by:
+```
+# systemctl stop NetworkManager
+```
+
+Rerun the `airmon-ng start` command until it works and shows you interfaces without any errors.
+
+To find the network we want to attack, run:
+```
+airodump-ng <new interface name>
+```
+
+where `<new interface name>` is what is reported by `iwconfig`.
+
+This will show you all of the networks that are broadcasting and their information. We will need the BSSID, the encryption method, and the channel of our target networks.
+
+Now we need to test our network. First, we have to start the card on the right channel. First,
+```
+# airmon-ng stop <new interface name>
+# airmon-ng start <interface> <channel from airodump>
+```
+
+Now we can start attacking that network directly. Lets test to make sure we have a connection:
+```
+# aireplay-ng -9 -e <SSID> -a <BSSID> <new interface name>
+```
+
+It should report 100%. If it doesn't then you need to move and get to a better location.
+
+Now we can start capturing IVs to use:
+```
+# airodump-ng -c <channel> --bssid <bssid> -w output <new interface name>
+```
+
+... to be continued. You can find where we are in their wiki pages. Some of the information about is to clarify the beginnings. 
+
 
 ## Hacking WPA2 ##
 
